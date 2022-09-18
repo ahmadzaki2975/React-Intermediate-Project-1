@@ -24,6 +24,7 @@ function App() {
   useEffect(() => {
     setNotesList(notes);
   }, [])
+  console.log("noteslist app" + notesList)
 
   //? functions
   const addNote = (note) => {
@@ -68,7 +69,7 @@ function App() {
           } />
 
           //? Search Page Route
-          <Route path="/search" element={<Search notesList={notes} />} />
+          <Route path="/search" element={<Search notesList={notesList} />} />
 
           //? Add Note Route
           <Route path="/add-note" element={<AddNote addNote={addNote} />} />

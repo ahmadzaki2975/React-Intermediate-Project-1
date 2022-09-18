@@ -5,9 +5,9 @@ import {AiFillInfoCircle} from "react-icons/ai";
 
 export const Search = (props) => {
   const notesList = props.notesList;
-  // console.log(notesList);
+  console.log(notesList);
   const [showResult, setShowResult] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams("");
+  const [searchParams, setSearchParams] = useSearchParams({keyword: " "});
   const [result, setResult] = useState([
     {
       id: "",
@@ -19,7 +19,6 @@ export const Search = (props) => {
   // console.log(keywordQuery);
 
   const handleSearch = () => {
-    // setSearchParams({keyword: keyword});
     const searchResult = notesList.filter((note) => note.title.includes(keywordQuery) || note.body.includes(keywordQuery));
     setResult(searchResult);
     setShowResult(true);
