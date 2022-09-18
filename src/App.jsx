@@ -24,7 +24,6 @@ function App() {
   useEffect(() => {
     setNotesList(notes);
   }, [])
-  console.log("noteslist app" + notesList)
 
   //? functions
   const addNote = (note) => {
