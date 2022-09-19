@@ -1,4 +1,5 @@
 import { Note } from "./Note";
+import PropTypes from "prop-types";
 
 export const NotesList = (props) => {
   const notes = props.notesList.filter((note) => note.archived == false);
@@ -27,4 +28,8 @@ export const NotesList = (props) => {
       </div> */}
     </div>
   );
+};
+
+NotesList.propTypes = {
+  notesList: PropTypes.array,
 };

@@ -2,6 +2,7 @@ import { useSearchParams } from "react-router-dom";
 import { useState } from "react";
 import { Note } from "../components/Note";
 import {AiFillInfoCircle} from "react-icons/ai";
+import PropTypes from "prop-types";
 
 export const Search = (props) => {
   const notesList = props.notesList;
@@ -71,4 +72,8 @@ export const Search = (props) => {
       </div>
     </div>
   );
+}
+
+Search.propTypes = {
+  notesList: PropTypes.array,
 }

@@ -1,10 +1,11 @@
 import { Note } from "../components/Note";
-import { useState, useEffect } from "react";
+import PropTypes from "prop-types";
 
 export const Archived = (props) => {
   const archivedNotes = props.notesList.filter((note) => note.archived == true);
 
   if (archivedNotes.length > 0) {
+
     return (
       <>
         <h1 className="text-2xl font-semibold text-center pt-10">Archive</h1>
@@ -32,4 +33,8 @@ export const Archived = (props) => {
       </div>
     );
   }
+};
+
+Archived.propTypes = {
+  notesList: PropTypes.array,
 };

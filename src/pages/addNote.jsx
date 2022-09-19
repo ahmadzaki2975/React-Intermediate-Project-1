@@ -8,14 +8,6 @@ export const AddNote = (props) => {
   const [body, setBody] = useState("");
   const navigate = useNavigate();
 
-  note.PropType = {
-    id: PropType.string,
-    title: PropType.string,
-    body: PropType.string,
-    archived: PropType.bool,
-    createdAt: PropType.string,
-  };
-
   const handleSubmit = (e) => {
     const newNote = {
       id: Date.now().toString(),
@@ -47,4 +39,8 @@ export const AddNote = (props) => {
       </form>
     </>
   )
+}
+
+AddNote.propTypes = {
+  addNote: PropType.func,
 }

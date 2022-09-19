@@ -4,6 +4,7 @@ import { showFormattedDate } from "../utils/dateFormat";
 import  {AiOutlineRollback}  from "react-icons/ai";
 import {RiInboxArchiveFill, RiInboxUnarchiveFill} from "react-icons/ri";
 import {FaTrashAlt} from "react-icons/fa";
+import PropTypes from "prop-types";
 
 export const NoteDetails = (props) => {
   const { noteId } = useParams();
@@ -88,4 +89,10 @@ export const NoteDetails = (props) => {
       </div>
     );
   }
+};
+
+NoteDetails.propTypes = {
+  notesList: PropTypes.array,
+  deleteNote: PropTypes.func,
+  toggleArchive: PropTypes.func,
 };
