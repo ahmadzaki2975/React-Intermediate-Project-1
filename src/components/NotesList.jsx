@@ -13,7 +13,7 @@ export const NotesList = (props) => {
               title={note.title}
               body={note.body}
               key={note.id}
-              id={note.id}
+              id={note.id.toString()}
               createdAt={note.createdAt}
             />
           );

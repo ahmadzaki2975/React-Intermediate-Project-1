@@ -3,27 +3,28 @@ import PropType from "prop-types";
 import { useNavigate } from "react-router-dom";
 
 export const AddNote = (props) => {
-  const [note, setNote] = useState({});
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    const now = Date.now();
+    const date = new Date(now);
     const newNote = {
       id: Date.now().toString(),
       title: title,
       body: body,
       archived: false,
-      createdAt: Date.now(),
+      createdAt: date.toISOString(),
     };
     if (title.length <= 0 || body.length <= 0) {
       alert("Please fill all the fields");
     } else {
-      setNote(newNote);
       props.addNote(newNote);
       setTitle("");
       setBody("");
       navigate("/notes");
+      console.log(newNote);
     }
   }
 
